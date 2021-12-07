@@ -10,6 +10,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "contentstream": "1.0.0",
+    "express": "^4.17.1",
+    "gif-encoder": "0.7.2",
+    "jpeg-js": "0.4.3",
+    "ndarray": "1.0.19",
+    "ndarray-ops": "1.2.2",
+    "pngjs-nozlib": "1.0.0",
+    "through": "2.3.8"
   }
 }
