@@ -67,9 +67,16 @@ def read_DICOM_slices(path, viewOfDicomName, viewOfDicomSliceNumber, viewOfDicom
     for i, img2d in enumerate(slices):
         img3d[:, :, i] = img2d.pixel_array
 
-    columns = ['PatientID', 'PatientName', 'StudyDescription', 'PatientBirthDate', 'StudyDate', 'Modality', 'Manufacturer', 'InstitutionName', 'ProtocolName']
+    columns = ['AccessionNumber', 'AcquisitionNumber', 'BitsAllocated', 'BitsStored', 'Columns', 'DeviceSerialNumber', 'EchoNumbers', 'EchoTime',
+ 'EchoTrainLength', 'FlipAngle', 'FrameOfReferenceUID', 'HeartRate', 'HighBit', 'HighRRValue', 'ImageComments', 'ImagedNucleus', 'ImagingFrequency', 'InPlanePhaseEncodingDirection', 'InstanceCreationDate', 'InstanceCreationTime', 'InstanceCreatorUID', 'InstanceNumber', 
+'InstitutionName', 'IntervalsAcquired', 'IntervalsRejected', 'InversionTime', 'LowRRValue', 'MRAcquisitionType', 'MagneticFieldStrength', 'Manufacturer', 'ManufacturerModelName', 
+'Modality', 'NumberOfAverages', 'NumberOfPhaseEncodingSteps', 'PatientBirthDate', 'PatientID', 'PatientName', 'PatientPosition', 'PatientSex', 'PatientWeight', 
+'PercentPhaseFieldOfView', 'PercentSampling', 'PhotometricInterpretation', 'PixelRepresentation', 'PixelSpacing', 'PositionReferenceIndicator', 
+'ProtocolName', 'ReceiveCoilName', 'ReferringPhysicianName', 'RepetitionTime', 'Rows', 'SOPClassUID', 'SOPInstanceUID', 'SamplesPerPixel', 'ScanOptions', 
+'ScanningSequence', 'SequenceVariant', 'SeriesDate', 'SeriesDescription', 'SeriesInstanceUID', 'SeriesNumber', 'SeriesTime', 'SliceThickness', 'SoftwareVersions',
+ 'SpacingBetweenSlices', 'SpecificCharacterSet', 'StudyDate', 'StudyDescription', 'StudyID', 'StudyInstanceUID', 'StudyTime', 'TransmitCoilName', 'WindowCenter', 
+ 'WindowWidth']
     col_dict = {col: [] for col in columns}
-
     try:
         for col in columns: 
             col_dict[col].append(str(getattr(files[0], col)))
